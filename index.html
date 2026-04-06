@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SlimCenter – Clínica Estética | Alagoinhas/BA</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ======================================================
+     NAVEGAÇÃO
+======================================================= -->
+<nav>
+  <div class="nav-logo">
+    <img src="img/logo.png" alt="SlimCenter Logo" class="nav-logo-img">
+  </div>
+  <ul class="nav-links">
+    <li><a href="#sobre"><strong>A Clínica</strong></a></li>
+    <li><a href="#procedimentos"><strong>Procedimentos</strong></a></li>
+    <li><a href="#depoimentos"><strong>Depoimentos</strong></a></li>
+    <li><a href="#agendar"><strong>Agendar</strong></a></li>
+  </ul>
+  <button class="nav-cta" onclick="document.getElementById('agendar').scrollIntoView({behavior:'smooth'})">
+    Agendar Consulta
+  </button>
+
+  <!-- Hambúrguer (visível só no mobile) -->
+  <button class="nav-hamburger" id="hamburger" aria-label="Abrir menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<!-- Menu mobile -->
+<div class="nav-mobile-menu" id="mobileMenu">
+  <a href="#sobre" class="mobile-link">A Clínica</a>
+  <a href="#procedimentos" class="mobile-link">Procedimentos</a>
+  <a href="#depoimentos" class="mobile-link">Depoimentos</a>
+  <a href="#agendar" class="mobile-link">Agendar</a>
+  <a href="#agendar" class="nav-cta-mobile">Agendar Consulta</a>
+</div>
+
+<!-- ======================================================
+     HERO
+======================================================= -->
+<section class="hero" id="inicio">
+  <div class="hero-text">
+    <span class="hero-badge"><strong>✦ Clínica Estética · Alagoinhas/BA</strong></span>
+    <h1>Transforme sua<br><em>melhor versão</em></h1>
+    <p class="hero-sub">
+      Tecnologia avançada, profissionais especializados e tratamentos que entregam
+      resultados reais — na sua pele, no seu corpo, na sua autoestima.
+    </p>
+    <div class="hero-actions">
+      <a href="#agendar" class="btn-white">Agendar Avaliação</a>
+      <a href="#procedimentos" class="btn-outline-white">Ver Procedimentos</a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-card-wrap">
+      <div class="hero-main-card">
+        <div class="hero-card-top">
+          <div class="hero-avatar">💆‍♀️</div>
+          <div>
+            <p class="hero-card-name">SlimCenter</p>
+            <p class="hero-card-sub">Alagoinhas · Bahia</p>
+          </div>
+        </div>
+        <div class="hero-stats-grid">
+          <div class="hero-stat">
+            <span class="hero-stat-num">98%</span>
+            <span class="hero-stat-label">Satisfação</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-num">500+</span>
+            <span class="hero-stat-label">Clientes</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-num">15+</span>
+            <span class="hero-stat-label">Tratamentos</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-num">8 anos</span>
+            <span class="hero-stat-label">Experiência</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-tag">
+        <span class="tag-icon">✅</span>
+        <span class="tag-txt">Profissionais certificados</span>
+      </div>
+      <div class="hero-tag2">
+        <span class="tag-icon">⭐</span>
+        <span class="tag-txt">Nota 4.8 no Google</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================
+     BARRA DE CONFIANÇA
+======================================================= -->
+<div class="trust-bar">
+  <div class="trust-item">
+    <span class="trust-num">8+</span>
+    <span class="trust-label">Anos de Experiência</span>
+  </div>
+  <div class="trust-item">
+    <span class="trust-num">500+</span>
+    <span class="trust-label">Pacientes Atendidos</span>
+  </div>
+  <div class="trust-item">
+    <span class="trust-num">15+</span>
+    <span class="trust-label">Procedimentos</span>
+  </div>
+  <div class="trust-item">
+    <span class="trust-num">98%</span>
+    <span class="trust-label">Satisfação</span>
+  </div>
+</div>
+
+<!-- ======================================================
+     SOBRE
+======================================================= -->
+<section class="about-section" id="sobre">
+  <div class="container">
+    <div class="about-grid">
+
+      <div class="about-img-area">
+        <div class="about-main-block">
+          <!-- SUBSTITUA o emoji por uma <img> quando tiver a foto da clínica -->
+          <div class="about-icon-big">🏥</div>
+          <p class="about-claim">"Beleza com ciência e cuidado"</p>
+          <p class="about-location">📍 Alagoinhas, Bahia</p>
+        </div>
+        <div class="about-years-badge">
+          <strong>8+</strong>
+          <span>Anos cuidando de você</span>
+        </div>
+      </div>
+
+      <div class="about-text">
+        <span class="tag-label">A Clínica</span>
+        <h2 class="sec-title">Onde <em>ciência</em> encontra o cuidado</h2>
+        <p class="sec-sub">
+          A SlimCenter é referência em estética avançada em Alagoinhas/BA. Com equipamentos
+          de última geração e uma equipe altamente qualificada, oferecemos tratamentos seguros
+          e eficazes para face, corpo e bem-estar.
+        </p>
+        <div class="about-feats">
+          <div class="about-feat-row">
+            <div class="feat-num">01</div>
+            <div>
+              <p class="feat-name">Equipe especializada</p>
+              <p class="feat-info">Profissionais certificados com formação contínua e anos de experiência clínica.</p>
+            </div>
+          </div>
+          <div class="about-feat-row">
+            <div class="feat-num">02</div>
+            <div>
+              <p class="feat-name">Tecnologia de ponta</p>
+              <p class="feat-info">Equipamentos aprovados e protocolos baseados em evidências científicas.</p>
+            </div>
+          </div>
+          <div class="about-feat-row">
+            <div class="feat-num">03</div>
+            <div>
+              <p class="feat-name">Atendimento individualizado</p>
+              <p class="feat-info">Avaliação personalizada para criar o protocolo ideal para cada paciente.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================
+     PROCEDIMENTOS
+======================================================= -->
+<section class="proc-section" id="procedimentos">
+  <div class="container">
+
+    <div class="proc-header">
+      <div>
+        <span class="tag-label">Nossos Serviços</span>
+        <h2 class="sec-title">Tratamentos para <em>cada necessidade</em></h2>
+      </div>
+      <div class="tabs">
+        <button class="tab-btn on" onclick="tab('facial', this)">Faciais</button>
+        <button class="tab-btn"    onclick="tab('corporal', this)">Corporais</button>
+        <button class="tab-btn"    onclick="tab('avancada', this)">Avançados</button>
+      </div>
+    </div>
+
+    <!-- Faciais -->
+    <div class="proc-panel on" id="p-facial">
+      <div class="proc-card">
+        <div class="proc-ico">🧖‍♀️</div>
+        <p class="proc-title">Limpeza de Pele</p>
+        <p class="proc-desc">Higienização profunda que remove impurezas e desobstrui poros, devolvendo luminosidade e saúde à sua pele.</p>
+        <span class="proc-link">Saiba mais
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 8h10M9 4l4 4-4 4"/>
+            </svg>
+          </span>
+      </div>
+      <div class="proc-card">
+        <div class="proc-ico">💧</div>
+        <p class="proc-title">Hidratação Facial</p>
+        <p class="proc-desc">Tratamento intensivo com ativos concentrados que restauram a maciez, o brilho e a elasticidade da pele.</p>
+        <span class="proc-link">Saiba mais
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 8h10M9 4l4 4-4 4"/>
+            </svg>
+          </span>
+      </div>
+      <div class="proc-card">
+        <div class="proc-ico">✨</div>
+        <p class="proc-title">Peeling Químico</p>
+        <p class="proc-desc">Renovação celular acelerada para suavizar manchas, melasma, linhas finas e irregularidades da pele.</p>
+        <span class="proc-link">Saiba mais
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 8h10M9 4l4 4-4 4"/>
+            </svg>
+          </span>
+      </div>
+    </div>
+
+    <!-- Corporais -->
+    <div class="proc-panel" id="p-corporal">
+      <div class="proc-card">
+        <div class="proc-ico">🌿</div>
+        <p class="proc-title">Massagem Relaxante</p>
+        <p class="proc-desc">Técnica terapêutica que alivia tensões musculares, reduz estresse e promove equilíbrio físico e mental.</p>
+        <span class="proc-link">Saiba mais
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 8h10M9 4l4 4-4 4"/>
+            </svg>
+          </span>
+      </div>
+      <div class="proc-card">
+        <div class="proc-ico">💆‍♀️</div>
+        <p class="proc-title">Drenagem Linfática</p>
+        <p class="proc-desc">Estimulação do sistema linfático para eliminar toxinas, reduzir edemas e melhorar a circulação corporal.</p>
+        <span class="proc-link">Saiba mais
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 8h10M9 4l4 4-4 4"/>
+            </svg>
+          </span>
+      </div>
+      <div class="proc-card">
+        <div class="proc-ico">🔥</div>
+        <p class="proc-title">Modelagem Corporal</p>
+        <p class="proc-desc">Tratamento que redefine contornos, combate a celulite e promove firmeza e elasticidade cutânea.</p>
+        <span class="proc-link">Saiba mais
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 8h10M9 4l4 4-4 4"/>
+            </svg>
+          </span>
+      </div>
+    </div>
+
+    <!-- Avançados -->
+    <div class="proc-panel" id="p-avancada">
+      <div class="proc-card">
+        <div class="proc-ico">💉</div>
+        <p class="proc-title">Toxina Botulínica</p>
+        <p class="proc-desc">Aplicação precisa para suavizar rugas e linhas de expressão com resultados naturais e duradouros.</p>
+        <span class="proc-link">Saiba mais
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 8h10M9 4l4 4-4 4"/>
+            </svg>
+          </span>
+      </div>
+      <div class="proc-card">
+        <div class="proc-ico">🌟</div>
+        <p class="proc-title">Preenchimento Facial</p>
+        <p class="proc-desc">Volumização e definição com ácido hialurônico para lábios, maçãs do rosto e contorno facial.</p>
+        <span class="proc-link">Saiba mais
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 8h10M9 4l4 4-4 4"/>
+            </svg>
+          </span>
+      </div>
+      <div class="proc-card">
+        <div class="proc-ico">⚡</div>
+        <p class="proc-title">Laser Estético</p>
+        <p class="proc-desc">Tecnologia a laser para manchas, rejuvenescimento, depilação e melhora da textura da pele.</p>
+        <span class="proc-link">Saiba mais
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 8h10M9 4l4 4-4 4"/>
+            </svg>
+          </span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ======================================================
+     DEPOIMENTOS
+======================================================= -->
+<section class="test-section" id="depoimentos">
+  <div class="container">
+    <div class="test-header">
+      <span class="tag-label">Depoimentos</span>
+      <h2 class="sec-title">O que nossos <em>pacientes dizem</em></h2>
+      <p class="sec-sub" style="margin-top:0.5rem;">
+        Resultados reais de quem já transformou sua autoestima com a SlimCenter.
+      </p>
+    </div>
+    <div class="test-grid">
+      <div class="test-card">
+        <div class="test-top">
+          <span class="stars">★★★★★</span>
+          <span class="quote-mark">"</span>
+        </div>
+        <p class="test-text">Fiz a drenagem linfática por 10 sessões e a diferença foi incrível. O inchaço sumiu e me sinto muito mais leve. Equipe super atenciosa e profissional.</p>
+        <div class="test-author">
+          <div class="test-av">AC</div>
+          <div>
+            <p class="test-name">Ana Carolina</p>
+            <p class="test-proc">Drenagem Linfática</p>
+          </div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-top">
+          <span class="stars">★★★★★</span>
+          <span class="quote-mark">"</span>
+        </div>
+        <p class="test-text">O peeling transformou minha pele. Manchas que me incomodavam há anos clarearam significativamente. Resultado muito além do que eu esperava!</p>
+        <div class="test-author">
+          <div class="test-av">JM</div>
+          <div>
+            <p class="test-name">Juliana Melo</p>
+            <p class="test-proc">Peeling Químico</p>
+          </div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-top">
+          <span class="stars">★★★★★</span>
+          <span class="quote-mark">"</span>
+        </div>
+        <p class="test-text">Fiz botox e preenchimento. O resultado ficou extremamente natural. A profissional é muito competente e cuidadosa. Me sinto renovada. Recomendo demais!</p>
+        <div class="test-author">
+          <div class="test-av">FS</div>
+          <div>
+            <p class="test-name">Fernanda Silva</p>
+            <p class="test-proc">Botox & Preenchimento</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================
+     AGENDAMENTO
+======================================================= -->
+<section class="agenda-section" id="agendar">
+  <div class="agenda-text">
+    <span class="tag-label">Agende Agora</span>
+    <h2 class="sec-title">Pronto para <em>começar?</em></h2>
+    <p class="sec-sub" style="margin-top:0.8rem;">
+      Agende sua avaliação gratuita e descubra o protocolo ideal para você.
+      Estamos em Alagoinhas/BA, prontos para te atender.
+    </p>
+    <div class="agenda-contact">
+      <div class="contact-item"><span>📍</span> <strong>Alagoinhas, Bahia</strong></div>
+      <!-- ATUALIZE o telefone abaixo -->
+      <div class="contact-item"><span>📱</span> <strong>(75) 93183-2800</strong></div>
+      <div class="contact-item"><span>🕐</span> <strong>Seg–Sáb: 9h às 19h | Sáb: 9h às 13h</strong></div>
+    </div>
+  </div>
+
+  <div class="agenda-form">
+    <p class="form-title">Solicite sua avaliação gratuita</p>
+    <div class="form-row">
+      <label class="form-label">Nome completo</label>
+      <input class="form-input" type="text" placeholder="Seu nome">
+    </div>
+    <div class="form-row">
+      <label class="form-label">WhatsApp</label>
+      <input class="form-input" type="tel" placeholder="(00) 00000-0000">
+    </div>
+    <div class="form-row">
+      <label class="form-label">Procedimento de interesse</label>
+      <select class="form-select">
+        <option value="">Selecione...</option>
+        <option>Limpeza de Pele</option>
+        <option>Hidratação Facial</option>
+        <option>Peeling Químico</option>
+        <option>Drenagem Linfática</option>
+        <option>Modelagem Corporal</option>
+        <option>Toxina Botulínica</option>
+        <option>Preenchimento Facial</option>
+        <option>Laser Estético</option>
+      </select>
+    </div>
+    <button class="btn-submit">Solicitar Agendamento</button>
+  </div>
+</section>
+
+<!-- ======================================================
+     FOOTER
+======================================================= -->
+<footer>
+  <div>
+    <img src="img/logo.png" alt="SlimCenter Logo" class="foot-logo-img">
+    <p class="foot-desc">
+      <strong>Clínica de estética avançada em Alagoinhas/BA. Comprometida com resultados
+        reais, segurança e excelência no atendimento.</strong>
+    </p>
+    <p class="foot-location"><strong>📍 Localização:</strong> <br> <strong>Shopping Laguna<br>Endereço: Rua Dantas Bião, 745 Shopping Laguna, Loja 18 - Alagoinhas Velha, Alagoinhas - BA. <br>CEP: 48030-902</strong></p>
+  </div>
+  <div>
+    <p class="foot-heading"><strong>Tratamentos</strong></p>
+    <ul class="foot-links">
+      <li><a href="#procedimentos">Faciais</a></li>
+      <li><a href="#procedimentos">Corporais</a></li>
+      <li><a href="#procedimentos">Estética Avançada</a></li>
+    </ul>
+  </div>
+  <div>
+    <p class="foot-heading"><strong>A Clínica</strong></p>
+    <ul class="foot-links">
+      <li><a href="#sobre">Sobre nós</a></li>
+      <li><a href="#depoimentos">Depoimentos</a></li>
+      <li><a href="#agendar">Agendamento</a></li>
+    </ul>
+  </div>
+  <div>
+    <p class="foot-heading"><strong>Contato</strong></p>
+    <ul class="foot-links">
+      <!-- LINKS -->
+      <li><a href="https://wa.me/557531832800">WhatsApp</a></li>
+      <li><a href="https://www.instagram.com/slimcenter.alagoinhas/">Instagram</a></li>
+      <li><a href="https://www.facebook.com/profile.php?id=100089847075313">Facebook</a></li>
+      <li><a href="https://share.google/nojGNTeKJtUfqFAKg">Localização</a></li>
+    </ul>
+  </div>
+</footer>
+
+<div class="foot-bottom">
+  <span class="foot-copy">© 2026 SlimCenter – Alagoinhas/BA. Todos os direitos reservados.</span>
+</div>
+
+<!-- ======================================================
+     JAVASCRIPT
+======================================================= -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
