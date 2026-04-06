@@ -60,9 +60,10 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 10rem;
+  padding: 0 clamp(1.5rem, 5vw, 10rem);
   height: 90px;
   background: rgb(7, 80, 129);
+  gap: 1rem;
 }
 
 .nav-logo {
@@ -74,8 +75,9 @@ nav {
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  margin-right: 8rem;
+  margin-right: clamp(0.5rem, 3vw, 8rem);
   margin-top: 0.9rem;
+  flex-shrink: 0;
 }
 
 .nav-logo-img {
@@ -91,10 +93,11 @@ nav {
 
 .nav-links {
   display: flex;
-  gap: 3rem;
+  gap: clamp(1rem, 2vw, 3rem);
   list-style: none;
   align-items: center;
-  margin-right: 200px;
+  margin-right: clamp(0.5rem, 2vw, 3rem);
+  flex-shrink: 1;
 }
 
 .nav-links a {
@@ -105,6 +108,7 @@ nav {
   font-weight: 500;
   color: rgb(255, 255, 255);
   transition: color 0.25s;
+  white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -115,15 +119,17 @@ nav {
   background: var(--blue-mid);
   color: white;
   border: none;
-  padding: 0.6rem 1.6rem;
+  padding: 0.6rem 1.2rem;
   border-radius: 4px;
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   cursor: pointer;
   font-family: 'Montserrat', sans-serif;
   transition: background 0.25s;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .nav-cta:hover {
@@ -1112,16 +1118,15 @@ footer {
    ------------------------------------------------------------ */
 @media (max-width: 1024px) {
   nav {
-    padding: 0 2rem;
+    height: 70px;
   }
 
-  .nav-links {
-    gap: 1.8rem;
-    margin-right: 1.5rem;
+  .nav-logo-img {
+    height: 120px;
   }
 
   .nav-logo {
-    margin-right: 1.5rem;
+    margin-top: 0.4rem;
   }
 
   .hero {
