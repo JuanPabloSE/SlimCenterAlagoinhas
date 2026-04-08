@@ -13,67 +13,94 @@
 </head>
 <body>
 
+<!-- Skip link para acessibilidade de teclado -->
+<a class="skip-link" href="#conteudo">Ir para o conteúdo principal</a>
+
 <!-- ======================================================
      NAVEGAÇÃO
 ======================================================= -->
-<nav>
+<nav id="navbar" role="navigation" aria-label="Navegação principal">
   <div class="nav-logo">
-    <img src="img/logo.png" alt="SlimCenter Logo" class="nav-logo-img">
+    <img src="img/logo.png" alt="SlimCenter – Clínica Estética em Alagoinhas/BA" class="nav-logo-img">
   </div>
-  <ul class="nav-links">
-    <li><a href="#sobre"><strong>A Clínica</strong></a></li>
-    <li><a href="#procedimentos"><strong>Procedimentos</strong></a></li>
-    <li><a href="#depoimentos"><strong>Depoimentos</strong></a></li>
-    <li><a href="#agendar"><strong>Agendar</strong></a></li>
-  </ul>
-  <button class="nav-cta" onclick="document.getElementById('agendar').scrollIntoView({behavior:'smooth'})">
-    Agendar Consulta
-  </button>
 
-  <!-- Hambúrguer (visível só no mobile) -->
-  <button class="nav-hamburger" id="hamburger" aria-label="Abrir menu">
+  <ul class="nav-links" role="list">
+    <li><a href="#sobre">A Clínica</a></li>
+    <li><a href="#procedimentos">Procedimentos</a></li>
+    <li><a href="#depoimentos">Depoimentos</a></li>
+    <li><a href="#agendar">Agendar</a></li>
+  </ul>
+
+  <a href="#agendar" class="nav-cta" aria-label="Agendar consulta na SlimCenter">Agendar Consulta</a>
+
+  <button class="nav-hamburger" id="hamburger"
+          aria-label="Abrir menu de navegação"
+          aria-expanded="false"
+          aria-controls="mobileMenu">
     <span></span>
     <span></span>
     <span></span>
   </button>
 </nav>
 
+<!-- Overlay mobile -->
+<div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
 <!-- Menu mobile -->
-<div class="nav-mobile-menu" id="mobileMenu">
-  <a href="#sobre" class="mobile-link">A Clínica</a>
-  <a href="#procedimentos" class="mobile-link">Procedimentos</a>
-  <a href="#depoimentos" class="mobile-link">Depoimentos</a>
-  <a href="#agendar" class="mobile-link">Agendar</a>
-  <a href="#agendar" class="nav-cta-mobile">Agendar Consulta</a>
+<div class="nav-mobile-menu" id="mobileMenu" role="dialog" aria-label="Menu de navegação" aria-hidden="true">
+  <a href="#sobre"          class="mobile-link">A Clínica</a>
+  <a href="#procedimentos"  class="mobile-link">Procedimentos</a>
+  <a href="#depoimentos"    class="mobile-link">Depoimentos</a>
+  <a href="#agendar"        class="mobile-link">Agendar</a>
+  <a href="#agendar"        class="nav-cta-mobile">Agendar Consulta</a>
 </div>
+
+<main id="conteudo">
 
 <!-- ======================================================
      HERO
 ======================================================= -->
-<section class="hero" id="inicio">
+<section class="hero" id="inicio" aria-label="Apresentação da SlimCenter">
   <div class="hero-text">
-    <span class="hero-badge"><strong>✦ Clínica Estética · Alagoinhas/BA</strong></span>
+    <span class="hero-badge">
+      <!-- dot icon -->
+      <svg class="badge-dot" viewBox="0 0 10 10" fill="currentColor" aria-hidden="true">
+        <circle cx="5" cy="5" r="3"/>
+      </svg>
+      Clínica Estética · Alagoinhas/BA
+    </span>
+
     <h1>Transforme sua<br><em>melhor versão</em></h1>
+
     <p class="hero-sub">
       Tecnologia avançada, profissionais especializados e tratamentos que entregam
       resultados reais — na sua pele, no seu corpo, na sua autoestima.
     </p>
+
     <div class="hero-actions">
-      <a href="#agendar" class="btn-white">Agendar Avaliação</a>
-      <a href="#procedimentos" class="btn-outline-white">Ver Procedimentos</a>
+      <a href="#agendar"       class="btn-primary">Agendar Avaliação</a>
+      <a href="#procedimentos" class="btn-outline">Ver Procedimentos</a>
     </div>
   </div>
 
-  <div class="hero-visual">
+  <div class="hero-visual" aria-hidden="true">
     <div class="hero-card-wrap">
+
       <div class="hero-main-card">
         <div class="hero-card-top">
-          <div class="hero-avatar">💆‍♀️</div>
+          <div class="hero-avatar">
+            <!-- heart / beauty icon -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </div>
           <div>
             <p class="hero-card-name">SlimCenter</p>
             <p class="hero-card-sub">Alagoinhas · Bahia</p>
           </div>
         </div>
+
         <div class="hero-stats-grid">
           <div class="hero-stat">
             <span class="hero-stat-num">98%</span>
@@ -93,14 +120,25 @@
           </div>
         </div>
       </div>
+
+      <!-- Tag flutuante: profissionais certificados -->
       <div class="hero-tag">
-        <span class="tag-icon">✅</span>
+        <svg class="tag-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <polyline points="9 12 11 14 15 10"/>
+        </svg>
         <span class="tag-txt">Profissionais certificados</span>
       </div>
+
+      <!-- Tag flutuante: nota Google -->
       <div class="hero-tag2">
-        <span class="tag-icon">⭐</span>
+        <svg class="tag-icon-svg" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+        </svg>
         <span class="tag-txt">Nota 4.8 no Google</span>
       </div>
+
     </div>
   </div>
 </section>
@@ -108,20 +146,20 @@
 <!-- ======================================================
      BARRA DE CONFIANÇA
 ======================================================= -->
-<div class="trust-bar">
-  <div class="trust-item">
+<div class="trust-bar" role="list" aria-label="Números da SlimCenter">
+  <div class="trust-item" role="listitem">
     <span class="trust-num">8+</span>
     <span class="trust-label">Anos de Experiência</span>
   </div>
-  <div class="trust-item">
+  <div class="trust-item" role="listitem">
     <span class="trust-num">500+</span>
     <span class="trust-label">Pacientes Atendidos</span>
   </div>
-  <div class="trust-item">
+  <div class="trust-item" role="listitem">
     <span class="trust-num">15+</span>
     <span class="trust-label">Procedimentos</span>
   </div>
-  <div class="trust-item">
+  <div class="trust-item" role="listitem">
     <span class="trust-num">98%</span>
     <span class="trust-label">Satisfação</span>
   </div>
@@ -136,10 +174,24 @@
 
       <div class="about-img-area">
         <div class="about-main-block">
-          <!-- SUBSTITUA o emoji por uma <img> quando tiver a foto da clínica -->
-          <div class="about-icon-big">🏥</div>
+          <div class="about-icon-big" aria-hidden="true">
+            <!-- building / clinic icon -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </div>
           <p class="about-claim">"Beleza com ciência e cuidado"</p>
-          <p class="about-location">📍 Alagoinhas, Bahia</p>
+          <p class="about-location">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                 aria-hidden="true" class="loc-icon">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Alagoinhas, Bahia
+          </p>
         </div>
         <div class="about-years-badge">
           <strong>8+</strong>
@@ -155,23 +207,58 @@
           de última geração e uma equipe altamente qualificada, oferecemos tratamentos seguros
           e eficazes para face, corpo e bem-estar.
         </p>
+
         <div class="about-feats">
           <div class="about-feat-row">
-            <div class="feat-num">01</div>
+            <div class="feat-icon" aria-hidden="true">
+              <!-- users icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
             <div>
               <p class="feat-name">Equipe especializada</p>
               <p class="feat-info">Profissionais certificados com formação contínua e anos de experiência clínica.</p>
             </div>
           </div>
+
           <div class="about-feat-row">
-            <div class="feat-num">02</div>
+            <div class="feat-icon" aria-hidden="true">
+              <!-- cpu / tech icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="4" width="16" height="16" rx="2"/>
+                <rect x="9" y="9" width="6" height="6"/>
+                <line x1="9"  y1="1"  x2="9"  y2="4"/>
+                <line x1="15" y1="1"  x2="15" y2="4"/>
+                <line x1="9"  y1="20" x2="9"  y2="23"/>
+                <line x1="15" y1="20" x2="15" y2="23"/>
+                <line x1="20" y1="9"  x2="23" y2="9"/>
+                <line x1="20" y1="14" x2="23" y2="14"/>
+                <line x1="1"  y1="9"  x2="4"  y2="9"/>
+                <line x1="1"  y1="14" x2="4"  y2="14"/>
+              </svg>
+            </div>
             <div>
               <p class="feat-name">Tecnologia de ponta</p>
               <p class="feat-info">Equipamentos aprovados e protocolos baseados em evidências científicas.</p>
             </div>
           </div>
+
           <div class="about-feat-row">
-            <div class="feat-num">03</div>
+            <div class="feat-icon" aria-hidden="true">
+              <!-- user-check icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="8.5" cy="7" r="4"/>
+                <polyline points="17 11 19 13 23 9"/>
+              </svg>
+            </div>
             <div>
               <p class="feat-name">Atendimento individualizado</p>
               <p class="feat-info">Avaliação personalizada para criar o protocolo ideal para cada paciente.</p>
@@ -195,113 +282,211 @@
         <span class="tag-label">Nossos Serviços</span>
         <h2 class="sec-title">Tratamentos para <em>cada necessidade</em></h2>
       </div>
-      <div class="tabs">
-        <button class="tab-btn on" onclick="tab('facial', this)">Faciais</button>
-        <button class="tab-btn"    onclick="tab('corporal', this)">Corporais</button>
-        <button class="tab-btn"    onclick="tab('avancada', this)">Avançados</button>
+      <div class="tabs" role="tablist" aria-label="Categorias de procedimentos">
+        <button class="tab-btn on" role="tab" aria-selected="true"
+                aria-controls="p-facial" id="tab-facial"
+                onclick="tab('facial', this)">Faciais</button>
+        <button class="tab-btn" role="tab" aria-selected="false"
+                aria-controls="p-corporal" id="tab-corporal"
+                onclick="tab('corporal', this)">Corporais</button>
+        <button class="tab-btn" role="tab" aria-selected="false"
+                aria-controls="p-avancada" id="tab-avancada"
+                onclick="tab('avancada', this)">Avançados</button>
       </div>
     </div>
 
     <!-- Faciais -->
-    <div class="proc-panel on" id="p-facial">
-      <div class="proc-card">
-        <div class="proc-ico">🧖‍♀️</div>
+    <div class="proc-panel on" id="p-facial" role="tabpanel" aria-labelledby="tab-facial">
+
+      <article class="proc-card">
+        <div class="proc-ico" aria-hidden="true">
+          <!-- sparkle / face clean icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+          </svg>
+        </div>
         <p class="proc-title">Limpeza de Pele</p>
         <p class="proc-desc">Higienização profunda que remove impurezas e desobstrui poros, devolvendo luminosidade e saúde à sua pele.</p>
-        <span class="proc-link">Saiba mais
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M3 8h10M9 4l4 4-4 4"/>
-            </svg>
-          </span>
-      </div>
-      <div class="proc-card">
-        <div class="proc-ico">💧</div>
+        <span class="proc-link" tabindex="0" role="link" aria-label="Saiba mais sobre Limpeza de Pele">
+          Saiba mais
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4"/>
+          </svg>
+        </span>
+      </article>
+
+      <article class="proc-card">
+        <div class="proc-ico" aria-hidden="true">
+          <!-- droplet icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+          </svg>
+        </div>
         <p class="proc-title">Hidratação Facial</p>
         <p class="proc-desc">Tratamento intensivo com ativos concentrados que restauram a maciez, o brilho e a elasticidade da pele.</p>
-        <span class="proc-link">Saiba mais
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M3 8h10M9 4l4 4-4 4"/>
-            </svg>
-          </span>
-      </div>
-      <div class="proc-card">
-        <div class="proc-ico">✨</div>
+        <span class="proc-link" tabindex="0" role="link" aria-label="Saiba mais sobre Hidratação Facial">
+          Saiba mais
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4"/>
+          </svg>
+        </span>
+      </article>
+
+      <article class="proc-card">
+        <div class="proc-ico" aria-hidden="true">
+          <!-- layers / renewal icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+            <polyline points="2 17 12 22 22 17"/>
+            <polyline points="2 12 12 17 22 12"/>
+          </svg>
+        </div>
         <p class="proc-title">Peeling Químico</p>
         <p class="proc-desc">Renovação celular acelerada para suavizar manchas, melasma, linhas finas e irregularidades da pele.</p>
-        <span class="proc-link">Saiba mais
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M3 8h10M9 4l4 4-4 4"/>
-            </svg>
-          </span>
-      </div>
+        <span class="proc-link" tabindex="0" role="link" aria-label="Saiba mais sobre Peeling Químico">
+          Saiba mais
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4"/>
+          </svg>
+        </span>
+      </article>
+
     </div>
 
     <!-- Corporais -->
-    <div class="proc-panel" id="p-corporal">
-      <div class="proc-card">
-        <div class="proc-ico">🌿</div>
+    <div class="proc-panel" id="p-corporal" role="tabpanel" aria-labelledby="tab-corporal">
+
+      <article class="proc-card">
+        <div class="proc-ico" aria-hidden="true">
+          <!-- wind / relax icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/>
+          </svg>
+        </div>
         <p class="proc-title">Massagem Relaxante</p>
         <p class="proc-desc">Técnica terapêutica que alivia tensões musculares, reduz estresse e promove equilíbrio físico e mental.</p>
-        <span class="proc-link">Saiba mais
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M3 8h10M9 4l4 4-4 4"/>
-            </svg>
-          </span>
-      </div>
-      <div class="proc-card">
-        <div class="proc-ico">💆‍♀️</div>
+        <span class="proc-link" tabindex="0" role="link" aria-label="Saiba mais sobre Massagem Relaxante">
+          Saiba mais
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4"/>
+          </svg>
+        </span>
+      </article>
+
+      <article class="proc-card">
+        <div class="proc-ico" aria-hidden="true">
+          <!-- activity / lymph icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </div>
         <p class="proc-title">Drenagem Linfática</p>
         <p class="proc-desc">Estimulação do sistema linfático para eliminar toxinas, reduzir edemas e melhorar a circulação corporal.</p>
-        <span class="proc-link">Saiba mais
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M3 8h10M9 4l4 4-4 4"/>
-            </svg>
-          </span>
-      </div>
-      <div class="proc-card">
-        <div class="proc-ico">🔥</div>
+        <span class="proc-link" tabindex="0" role="link" aria-label="Saiba mais sobre Drenagem Linfática">
+          Saiba mais
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4"/>
+          </svg>
+        </span>
+      </article>
+
+      <article class="proc-card">
+        <div class="proc-ico" aria-hidden="true">
+          <!-- sliders / body model icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4"  y1="21" x2="4"  y2="14"/>
+            <line x1="4"  y1="10" x2="4"  y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="12"/>
+            <line x1="12" y1="8"  x2="12" y2="3"/>
+            <line x1="20" y1="21" x2="20" y2="16"/>
+            <line x1="20" y1="12" x2="20" y2="3"/>
+            <line x1="1"  y1="14" x2="7"  y2="14"/>
+            <line x1="9"  y1="8"  x2="15" y2="8"/>
+            <line x1="17" y1="16" x2="23" y2="16"/>
+          </svg>
+        </div>
         <p class="proc-title">Modelagem Corporal</p>
         <p class="proc-desc">Tratamento que redefine contornos, combate a celulite e promove firmeza e elasticidade cutânea.</p>
-        <span class="proc-link">Saiba mais
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M3 8h10M9 4l4 4-4 4"/>
-            </svg>
-          </span>
-      </div>
+        <span class="proc-link" tabindex="0" role="link" aria-label="Saiba mais sobre Modelagem Corporal">
+          Saiba mais
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4"/>
+          </svg>
+        </span>
+      </article>
+
     </div>
 
     <!-- Avançados -->
-    <div class="proc-panel" id="p-avancada">
-      <div class="proc-card">
-        <div class="proc-ico">💉</div>
+    <div class="proc-panel" id="p-avancada" role="tabpanel" aria-labelledby="tab-avancada">
+
+      <article class="proc-card">
+        <div class="proc-ico" aria-hidden="true">
+          <!-- syringe-like icon using cross/plus medical -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/>
+            <path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+            <path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/>
+            <path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/>
+            <path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/>
+            <path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/>
+            <path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/>
+            <path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/>
+          </svg>
+        </div>
         <p class="proc-title">Toxina Botulínica</p>
         <p class="proc-desc">Aplicação precisa para suavizar rugas e linhas de expressão com resultados naturais e duradouros.</p>
-        <span class="proc-link">Saiba mais
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M3 8h10M9 4l4 4-4 4"/>
-            </svg>
-          </span>
-      </div>
-      <div class="proc-card">
-        <div class="proc-ico">🌟</div>
+        <span class="proc-link" tabindex="0" role="link" aria-label="Saiba mais sobre Toxina Botulínica">
+          Saiba mais
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4"/>
+          </svg>
+        </span>
+      </article>
+
+      <article class="proc-card">
+        <div class="proc-ico" aria-hidden="true">
+          <!-- heart icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
         <p class="proc-title">Preenchimento Facial</p>
         <p class="proc-desc">Volumização e definição com ácido hialurônico para lábios, maçãs do rosto e contorno facial.</p>
-        <span class="proc-link">Saiba mais
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M3 8h10M9 4l4 4-4 4"/>
-            </svg>
-          </span>
-      </div>
-      <div class="proc-card">
-        <div class="proc-ico">⚡</div>
+        <span class="proc-link" tabindex="0" role="link" aria-label="Saiba mais sobre Preenchimento Facial">
+          Saiba mais
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4"/>
+          </svg>
+        </span>
+      </article>
+
+      <article class="proc-card">
+        <div class="proc-ico" aria-hidden="true">
+          <!-- zap / laser icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+          </svg>
+        </div>
         <p class="proc-title">Laser Estético</p>
         <p class="proc-desc">Tecnologia a laser para manchas, rejuvenescimento, depilação e melhora da textura da pele.</p>
-        <span class="proc-link">Saiba mais
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M3 8h10M9 4l4 4-4 4"/>
-            </svg>
-          </span>
-      </div>
+        <span class="proc-link" tabindex="0" role="link" aria-label="Saiba mais sobre Laser Estético">
+          Saiba mais
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4"/>
+          </svg>
+        </span>
+      </article>
+
     </div>
 
   </div>
@@ -312,56 +497,62 @@
 ======================================================= -->
 <section class="test-section" id="depoimentos">
   <div class="container">
+
     <div class="test-header">
       <span class="tag-label">Depoimentos</span>
       <h2 class="sec-title">O que nossos <em>pacientes dizem</em></h2>
-      <p class="sec-sub" style="margin-top:0.5rem;">
+      <p class="sec-sub">
         Resultados reais de quem já transformou sua autoestima com a SlimCenter.
       </p>
     </div>
+
     <div class="test-grid">
-      <div class="test-card">
+
+      <blockquote class="test-card">
         <div class="test-top">
-          <span class="stars">★★★★★</span>
-          <span class="quote-mark">"</span>
+          <span class="stars" aria-label="5 estrelas">★★★★★</span>
+          <span class="quote-mark" aria-hidden="true">"</span>
         </div>
         <p class="test-text">Fiz a drenagem linfática por 10 sessões e a diferença foi incrível. O inchaço sumiu e me sinto muito mais leve. Equipe super atenciosa e profissional.</p>
-        <div class="test-author">
-          <div class="test-av">AC</div>
+        <footer class="test-author">
+          <div class="test-av" aria-hidden="true">AC</div>
           <div>
             <p class="test-name">Ana Carolina</p>
             <p class="test-proc">Drenagem Linfática</p>
           </div>
-        </div>
-      </div>
-      <div class="test-card">
+        </footer>
+      </blockquote>
+
+      <blockquote class="test-card">
         <div class="test-top">
-          <span class="stars">★★★★★</span>
-          <span class="quote-mark">"</span>
+          <span class="stars" aria-label="5 estrelas">★★★★★</span>
+          <span class="quote-mark" aria-hidden="true">"</span>
         </div>
         <p class="test-text">O peeling transformou minha pele. Manchas que me incomodavam há anos clarearam significativamente. Resultado muito além do que eu esperava!</p>
-        <div class="test-author">
-          <div class="test-av">JM</div>
+        <footer class="test-author">
+          <div class="test-av" aria-hidden="true">JM</div>
           <div>
             <p class="test-name">Juliana Melo</p>
             <p class="test-proc">Peeling Químico</p>
           </div>
-        </div>
-      </div>
-      <div class="test-card">
+        </footer>
+      </blockquote>
+
+      <blockquote class="test-card">
         <div class="test-top">
-          <span class="stars">★★★★★</span>
-          <span class="quote-mark">"</span>
+          <span class="stars" aria-label="5 estrelas">★★★★★</span>
+          <span class="quote-mark" aria-hidden="true">"</span>
         </div>
         <p class="test-text">Fiz botox e preenchimento. O resultado ficou extremamente natural. A profissional é muito competente e cuidadosa. Me sinto renovada. Recomendo demais!</p>
-        <div class="test-author">
-          <div class="test-av">FS</div>
+        <footer class="test-author">
+          <div class="test-av" aria-hidden="true">FS</div>
           <div>
             <p class="test-name">Fernanda Silva</p>
-            <p class="test-proc">Botox & Preenchimento</p>
+            <p class="test-proc">Botox &amp; Preenchimento</p>
           </div>
-        </div>
-      </div>
+        </footer>
+      </blockquote>
+
     </div>
   </div>
 </section>
@@ -370,34 +561,61 @@
      AGENDAMENTO
 ======================================================= -->
 <section class="agenda-section" id="agendar">
+
   <div class="agenda-text">
     <span class="tag-label">Agende Agora</span>
     <h2 class="sec-title">Pronto para <em>começar?</em></h2>
-    <p class="sec-sub" style="margin-top:0.8rem;">
+    <p class="sec-sub">
       Agende sua avaliação gratuita e descubra o protocolo ideal para você.
       Estamos em Alagoinhas/BA, prontos para te atender.
     </p>
+
     <div class="agenda-contact">
-      <div class="contact-item"><span>📍</span> <strong>Alagoinhas, Bahia</strong></div>
-      <!-- ATUALIZE o telefone abaixo -->
-      <div class="contact-item"><span>📱</span> <strong>(75) 93183-2800</strong></div>
-      <div class="contact-item"><span>🕐</span> <strong>Seg–Sáb: 9h às 19h | Sáb: 9h às 13h</strong></div>
+      <div class="contact-item">
+        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+        <strong>Alagoinhas, Bahia</strong>
+      </div>
+      <div class="contact-item">
+        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+          <line x1="12" y1="18" x2="12.01" y2="18"/>
+        </svg>
+        <strong>(75) 93183-2800</strong>
+      </div>
+      <div class="contact-item">
+        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"/>
+          <polyline points="12 6 12 12 16 14"/>
+        </svg>
+        <strong>Seg–Sex: 9h às 19h | Sáb: 9h às 13h</strong>
+      </div>
     </div>
   </div>
 
-  <div class="agenda-form">
+  <div class="agenda-form" role="form" aria-label="Formulário de agendamento">
     <p class="form-title">Solicite sua avaliação gratuita</p>
+
     <div class="form-row">
-      <label class="form-label">Nome completo</label>
-      <input class="form-input" type="text" placeholder="Seu nome">
+      <label class="form-label" for="f-nome">Nome completo</label>
+      <input class="form-input" type="text" id="f-nome" name="nome"
+             placeholder="Seu nome" autocomplete="name" required>
     </div>
+
     <div class="form-row">
-      <label class="form-label">WhatsApp</label>
-      <input class="form-input" type="tel" placeholder="(00) 00000-0000">
+      <label class="form-label" for="f-wpp">WhatsApp</label>
+      <input class="form-input" type="tel" id="f-wpp" name="whatsapp"
+             placeholder="(00) 00000-0000" autocomplete="tel" required>
     </div>
+
     <div class="form-row">
-      <label class="form-label">Procedimento de interesse</label>
-      <select class="form-select">
+      <label class="form-label" for="f-proc">Procedimento de interesse</label>
+      <select class="form-select" id="f-proc" name="procedimento" required>
         <option value="">Selecione...</option>
         <option>Limpeza de Pele</option>
         <option>Hidratação Facial</option>
@@ -409,42 +627,53 @@
         <option>Laser Estético</option>
       </select>
     </div>
-    <button class="btn-submit">Solicitar Agendamento</button>
+
+    <button class="btn-submit" type="button">Solicitar Agendamento</button>
   </div>
+
 </section>
+
+</main>
 
 <!-- ======================================================
      FOOTER
 ======================================================= -->
-<footer>
-  <div>
+<footer role="contentinfo">
+  <div class="foot-brand">
     <img src="img/logo.png" alt="SlimCenter Logo" class="foot-logo-img">
     <p class="foot-desc">
-      <strong>Clínica de estética avançada em Alagoinhas/BA. Comprometida com resultados
-        reais, segurança e excelência no atendimento.</strong>
+      Clínica de estética avançada em Alagoinhas/BA. Comprometida com resultados
+      reais, segurança e excelência no atendimento.
     </p>
-    <p class="foot-location"><strong>📍 Localização:</strong> <br> <strong>Shopping Laguna<br>Endereço: Rua Dantas Bião, 745 Shopping Laguna, Loja 18 - Alagoinhas Velha, Alagoinhas - BA. <br>CEP: 48030-902</strong></p>
+    <p class="foot-location">
+      <strong>Localização:</strong><br>
+      Shopping Laguna · Rua Dantas Bião, 745<br>
+      Loja 18 – Alagoinhas Velha, Alagoinhas – BA<br>
+      CEP: 48030-902
+    </p>
   </div>
+
   <div>
-    <p class="foot-heading"><strong>Tratamentos</strong></p>
+    <p class="foot-heading">Tratamentos</p>
     <ul class="foot-links">
       <li><a href="#procedimentos">Faciais</a></li>
       <li><a href="#procedimentos">Corporais</a></li>
       <li><a href="#procedimentos">Estética Avançada</a></li>
     </ul>
   </div>
+
   <div>
-    <p class="foot-heading"><strong>A Clínica</strong></p>
+    <p class="foot-heading">A Clínica</p>
     <ul class="foot-links">
       <li><a href="#sobre">Sobre nós</a></li>
       <li><a href="#depoimentos">Depoimentos</a></li>
       <li><a href="#agendar">Agendamento</a></li>
     </ul>
   </div>
+
   <div>
-    <p class="foot-heading"><strong>Contato</strong></p>
+    <p class="foot-heading">Contato</p>
     <ul class="foot-links">
-      <!-- LINKS -->
       <li><a href="https://wa.me/557531832800">WhatsApp</a></li>
       <li><a href="https://www.instagram.com/slimcenter.alagoinhas/">Instagram</a></li>
       <li><a href="https://www.facebook.com/profile.php?id=100089847075313">Facebook</a></li>
