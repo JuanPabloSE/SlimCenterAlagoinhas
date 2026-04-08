@@ -30,7 +30,7 @@
   /* ── Text ── */
   --tx-900: #0d1f4a;
   --tx-600: #3a5080;
-  --tx-400: #6a84b0;
+  --tx-400: rgb(9, 8, 9);
   --tx-inv: rgba(255,255,255,.88);
   --tx-inv-muted: rgba(255,255,255,.55);
 
@@ -1002,21 +1002,23 @@ section { padding: 5.5rem clamp(2rem, 6vw, 6rem); }
   display: grid;
   grid-template-columns: repeat(3,1fr);
   gap: 1.2rem;
+  --card-border: #0e7b9d;
 }
 
 .test-card {
-  border: 1px solid var(--c-100);
+  border: 1px solid var(--card-border); /* 👈 agora sim */
   border-radius: var(--r-md);
   padding: 2rem;
   background: var(--off-white);
   transition: box-shadow var(--base) var(--ease),
-              transform var(--base) var(--ease);
+  transform var(--base) var(--ease);
 }
 
 .test-card:hover {
   box-shadow: var(--sh-md);
   transform: translateY(-2px);
 }
+
 
 .test-top {
   display: flex;
@@ -1050,10 +1052,19 @@ section { padding: 5.5rem clamp(2rem, 6vw, 6rem); }
 .test-author {
   display: flex;
   align-items: center;
+  justify-content: center; /* 👈 centraliza horizontal */
+
   gap: .75rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--c-100);
+
+  margin-top: 0.5rem;
+  padding: 1rem;
+
+  background: var(--c-800);
+  border-radius: 0 0 var(--r-md) var(--r-md);
+
+  text-align: center; /* 👈 centraliza texto */
 }
+
 
 .test-av {
   width: 40px; height: 40px;
@@ -1072,13 +1083,13 @@ section { padding: 5.5rem clamp(2rem, 6vw, 6rem); }
 .test-name {
   font-size: .84rem;
   font-weight: 700;
-  color: var(--tx-900);
+  color: white;
   margin-bottom: 2px;
 }
 
 .test-proc {
   font-size: .72rem;
-  color: var(--tx-400);
+  color: #06b6f8;
   font-weight: 500;
 }
 
