@@ -69,8 +69,11 @@ document.addEventListener('DOMContentLoaded', function () {
         alert('Por favor, preencha todos os campos!');
         return;
       }
-      if (whatsapp.replace(/\D/g, '').length < 10) {
-        alert('Digite um número de WhatsApp válido!');
+
+      const numero = whatsapp.replace(/\D/g, '');
+
+      if (numero.length < 10 || numero.length > 11) {
+        alert('Digite um número válido com DDD!');
         return;
       }
 
