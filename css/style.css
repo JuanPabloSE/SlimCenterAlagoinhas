@@ -1043,7 +1043,7 @@ section { padding: 5.5rem clamp(2rem, 6vw, 6rem); }
 
 .test-text {
   font-size: .87rem;
-  color: var(--tx-600);
+  color: #090809;
   line-height: 1.85;
   margin-bottom: 1.5rem;
   font-style: italic;
