@@ -1046,7 +1046,7 @@ section { padding: 5.5rem clamp(2rem, 6vw, 6rem); }
   color: #090809;
   line-height: 1.85;
   margin-bottom: 1.5rem;
-  font-style: italic;
+  font-style: normal;
 }
 
 .test-author {
