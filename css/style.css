@@ -238,10 +238,11 @@ nav {
   gap: .25rem;
   box-shadow: -8px 0 40px rgba(0,0,0,.35);
   transform: translateX(100%);
+  pointer-events: none;
   transition: transform var(--slow) var(--ease);
 }
 
-.nav-mobile-menu.open { transform: translateX(0); }
+.nav-mobile-menu.open { transform: translateX(0); pointer-events: auto; }
 
 .mobile-link {
   display: flex;
@@ -291,11 +292,12 @@ nav {
   background: rgba(0,0,0,.52);
   z-index: 240;
   opacity: 0;
+  pointer-events: none;
   transition: opacity var(--base);
   cursor: pointer;
 }
 
-.nav-overlay.open { opacity: 1; }
+.nav-overlay.open { opacity: 1; pointer-events: auto; }
 
 /* ------------------------------------------------------------
    HERO
